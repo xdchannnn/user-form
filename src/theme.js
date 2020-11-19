@@ -1,6 +1,5 @@
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 import { red } from '@material-ui/core/colors';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import imageUrl, { ReactComponent as Image }  from '../assets/background.svg';
 
 // Create a theme instance.
@@ -11,7 +10,6 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: '#19857b',
-      gay: '#fff',
     },
     error: {
       main: red.A400,
@@ -25,6 +23,7 @@ const theme = createMuiTheme({
                 backgroundRepeat: 'no-repeat',
                 marginLeft: '34px',
                 marginRight: '23px',
+                backgroundSize: '100% 100%',
             }
         }
     }

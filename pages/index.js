@@ -15,8 +15,6 @@ import theme from '../src/theme';
 
 export default function Index() {
   return (
-    <MuiThemeProvider theme={theme}>
-      <CssBaseline>
         <Container maxWidth="sm">
           <Box my={4}>
             <Typography variant="h4" component="h1" gutterBottom>
@@ -27,7 +25,5 @@ export default function Index() {
             </Button>
           </Box>
         </Container>
-      </CssBaseline>
-    </MuiThemeProvider>
   );
 }

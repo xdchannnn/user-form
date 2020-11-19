@@ -5,7 +5,6 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import NextLink from 'next/link';
 import MuiLink from '@material-ui/core/Link';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const NextComposed = React.forwardRef(function NextComposed(props, ref) {
   const { as, href, ...other } = props;
@@ -14,8 +13,7 @@ const NextComposed = React.forwardRef(function NextComposed(props, ref) {
     <NextLink href={href} as={as}>
       <a ref={ref} {...other}>
          
-      </a>
-      
+      </a>     
     </NextLink>
   );
 });

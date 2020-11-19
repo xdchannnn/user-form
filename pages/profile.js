@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Head from 'next/head';
+
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -10,8 +12,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Navbar from '../src/Navbar';
 import Link from '../src/Link';
 import Copyright from '../src/Copyright';
+import Breadcrumbs from '../src/Breadcrumbs';
+import UserNameBlock from '../src/UserNameBlock';
 
-import "typeface-open-sans";
 
 const useStyles = makeStyles({
   typography: {
@@ -28,21 +31,25 @@ export default function About() {
   const classes = useStyles();
 
   return (
-    <Container maxWidth="false" disableGutters={true}>
-      <Navbar />  
+    <div>
+      <Head>
+        <title>Личный профиль</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      
+      <Container maxWidth="false" disableGutters={true}>
+        <Navbar />  
 
-      <Box>
-        <Typography classes={{root: classes.typography}} component="h1" gutterBottom="true">
-          ЛИЧНЫЙ ПРОФИЛЬ
-        </Typography>
-
+        <Box>
+          <Typography classes={{root: classes.typography}} component="h1" gutterBottom="true">
+            ЛИЧНЫЙ ПРОФИЛЬ
+          </Typography> 
+          
+          <Breadcrumbs />       
+          <UserNameBlock />  
         
-
-        <Button variant="contained" color="primary" component={Link} naked href="/">
-          Go to the main page
-        </Button>
-        <Copyright />
-      </Box>
-    </Container>
+        </Box>
+      </Container>
+    </div>
   );
 }
