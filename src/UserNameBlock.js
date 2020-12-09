@@ -6,8 +6,11 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
 
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import CreateIcon from '@material-ui/icons/Create';
+import CloseIcon from '@material-ui/icons/Close';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -23,8 +26,8 @@ const useStyles = makeStyles({
     flex: {
         display: "flex",
         flexDirection: 'row',
-        alignItems: "center",
-        justifyContent: 'flex-start',
+        alignItems: "center",  
+        justifyContent: 'space-between',      
     },
     button: {
         color: "#fff",
@@ -32,7 +35,9 @@ const useStyles = makeStyles({
         style: 'normal',
         fontSize: '14px',
         lineHeight: '19.07px',
-        marginTop: '5px',
+        marginTop: '8px',
+        textAlign: 'center',
+        borderRadius: '20px',
     },
     text: {
         fontFamily: 'Open Sans',
@@ -43,11 +48,12 @@ const useStyles = makeStyles({
         color: 'white',
         marginLeft: '-14px',
     },
+    
 })
 
-export default function UserNameBlock() {
+export default function UserNameBlock(props) {
     const classes = useStyles();
-    const [name, setName] = useState("Биохакер Ментор Программист")
+    const input = props.input;
 
     return(
         <Card position="relative" className={`${classes.card} ${classes.flex}`}>
@@ -72,11 +78,21 @@ export default function UserNameBlock() {
                         }}
                     /> 
                 </Paper>               
-                <Typography className={classes.text}>{name}</Typography>
+                
+                <Typography className={classes.text}>{props.name}</Typography>
             </CardContent>
             
             <CardActions>
-                <Button className={classes.button}>Редактировать</Button>
+                {input 
+                ?
+                <Button className={classes.button} onClick={() => props.inputIsOpen(prevState => (!prevState))} endIcon={<CreateIcon />}>
+                        Редактировать                    
+                </Button>
+                :
+                <Button className={classes.button} onClick={() => props.inputIsOpen(prevState => (!prevState))} endIcon={<CloseIcon />}>
+                        Закрыть                    
+                </Button>
+                }
             </CardActions>
         </Card>
     );

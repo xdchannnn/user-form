@@ -1,4 +1,5 @@
 {
+  "homepage": "http://f0494840.xsph.ru/",
   "name": "nextjs",
   "version": "4.0.0",
   "private": true,
@@ -13,6 +14,7 @@
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-scripts": "^4.0.1",
     "typeface-open-sans": "^1.1.13",
     "url-loader": "^4.1.1"
   },

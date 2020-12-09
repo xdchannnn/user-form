@@ -1,5 +1,3 @@
-
-
 module.exports = {
     webpack: (config) => {
       config.module.rules.push({
@@ -8,8 +6,7 @@ module.exports = {
           test: /\.(js|ts)x?$/,
         },
         use: ['@svgr/webpack', 'url-loader'],
-      })
-  
+      })  
       return config
-    }
+    } 
 }

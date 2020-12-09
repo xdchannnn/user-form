@@ -8,7 +8,6 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Divider from '@material-ui/core/Divider';
 
-
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import PhoneIcon from '@material-ui/icons/Phone';
 
@@ -60,10 +59,17 @@ const useStyles = makeStyles({
     divider: {
       width: "100%",
     },
+    cardContentInput: {
+        display: "flex",
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        width: '100%',
+    }
 })
 
 export default function userInfoBlock(props) {
     const classes = useStyles();
+    const input = props.input;
     
     return (
     <Card position="relative" className={`${classes.card} ${classes.flex}`}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Head from 'next/head';
 
@@ -11,9 +11,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Navbar from '../src/Navbar';
 import Link from '../src/Link';
-import Copyright from '../src/Copyright';
 import Breadcrumbs from '../src/Breadcrumbs';
 import UserNameBlock from '../src/UserNameBlock';
+import UserInfoBlock from '../src/UserInfoBlock';
+import UserInfoInput from '../src/UserInfoInput';
 
 
 const useStyles = makeStyles({
@@ -27,8 +28,10 @@ const useStyles = makeStyles({
   }
 });
 
-export default function About() {
+export default function Profile() {
   const classes = useStyles();
+  const [info, setInfo] = useState(["Биохакер Ментор Программист", "foobar@gmail.com", "Укажите номер телефона"]); //State with user info and name
+  const [input, inputIsOpen] = useState(false); //State defining if userInfoBlock input is open
 
   return (
     <div>
@@ -38,7 +41,7 @@ export default function About() {
       </Head>
       
       <Container maxWidth="false" disableGutters={true}>
-        <Navbar />  
+        <Navbar name={info[0]}/>  
 
         <Box>
           <Typography classes={{root: classes.typography}} component="h1" gutterBottom="true">
@@ -46,7 +49,15 @@ export default function About() {
           </Typography> 
           
           <Breadcrumbs />       
-          <UserNameBlock />  
+          
+          <UserNameBlock name={info[0]} input={input} inputIsOpen={inputIsOpen} />  
+          
+          {input 
+          ?
+          <UserInfoBlock info={info} input={input} inputIsOpen={inputIsOpen} />
+          :
+          <UserInfoInput info={info} setInfo={setInfo} inputIsOpen={inputIsOpen} />
+          }
         
         </Box>
       </Container>

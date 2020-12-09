@@ -15,6 +15,7 @@ const useStyles = makeStyles({
       fontSize: '14px',
       lineHeight: '19.07px',
       color: 'white',
+      marginBottom: '32px',
     }
   });
 

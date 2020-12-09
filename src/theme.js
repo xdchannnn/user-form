@@ -23,10 +23,10 @@ const theme = createMuiTheme({
                 backgroundRepeat: 'no-repeat',
                 marginLeft: '34px',
                 marginRight: '23px',
-                backgroundSize: '100% 100%',
-            }
-        }
-    }
+                backgroundSize: '100% 410px',
+            },
+        },
+    },
 }
 });
 
